@@ -35,10 +35,9 @@ $ gem install cocoapods
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
-use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'TiercelObjCBridge'
+    pod 'TiercelObjCBridge', :git => 'https://github.com/mixpods/TiercelObjCBridge.git'
 end
 ```
 
@@ -49,22 +48,10 @@ $ pod install
 ```
 
 
-
-## Demo
-
-- TiercelObjCBridge 依赖 Tiercel，所以运行 Demo 需要先下载 Tiercel 项目
-
-- 打开 TiercelObjCBridge 项目文件夹里面的`TiercelObjCBridge.xcworkspace`文件，点击菜单栏的`File`，选择`Add Files To "TiercelObjCBridge"...` ，把 Tiercel 项目中`Tiercel.xcodeproj`添加进去
-- 按顺序编译`Tiercel` Target、`TiercelObjCBridge` Target，最后就可以运行 Demo
-
-
-
 ## 用法
 
-TiercelObjCBridge 只是提供了桥接，本质上还是使用 Tiercel，所以在 Objective-C 上的用法和原版的用法基本一样，具体用法可以参考本项目的 Demo 和 Tiercel 的Demo。唯一注意点就是导入的方式，在需要使用 Tiercel 的文件加上以下这句宏即可
-
 ```objective-c
-#import <TiercelObjCBridge/TiercelObjCBridge-Swift.h>
+@import TiercelObjC;
 ```
 
 
